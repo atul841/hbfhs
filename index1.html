@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V&V — AI </title>
+  <meta name="description" content="V&V — AI-powered tools and consultancy to automate workflows, analyze data, and scale products.">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" href="./image/logo.png" type="image/png">
+  <!-- Font Awesome for icons (fas) -->
+  
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+
+  <style>
+
+  
+    :root{
+      --bg:#0b1220; --card:#0f172a; --muted:#94a3b8; --radius:14px; --container:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;line-height:1.45;color:#e6eef8;background:linear-gradient(180deg,#071026 0%,#071025 60%)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    .container{max-width:var(--container);margin:0 auto;padding:28px}
+
+    header{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(11,17,32,0.6),rgba(11,17,32,0.35));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:104px;height:44px;border-radius:10px;background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;overflow:hidden}
+    .logo img{width:200px;height:100%;object-fit:contain}
+    .tiny{font-size:13px}
+    nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0;align-items:center}
+    nav a.small{font-size:14px;color:var(--muted)}
+    .cta{padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,#06b6d4,#7c3aed);color:#041025;font-weight:600}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:60px 0}
+    .kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(124,58,237,0.12);color:#c7b3ff;font-weight:600;font-size:13px;margin-bottom:18px}
+    .hero h2{font-size:38px;margin:0 0 12px;color:#fff}
+    .lead{color:var(--muted);margin:0 0 20px}
+    .actions{display:flex;gap:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;font-weight:600;transition:0.25s ease;background:linear-gradient(90deg,#06b6d4,#7c3aed);color:#041025}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:#dbeafe}
+    .btn:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 8px 25px rgba(124,58,237,0.4);cursor:pointer}
+
+    .preview-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:14px;padding:18px;box-shadow:0 6px 26px rgba(2,6,23,0.7);border:1px solid rgba(255,255,255,0.03)}
+    .preview-spark{width:100%;height:220px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#041124,#072036);color:#8be0ff}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:42px 0}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .card h3{margin:0 0 8px;color:#fff}
+    .muted{color:var(--muted);font-size:14px}
+
+    .usecases{display:flex;gap:18px;margin:36px 0}
+    .uc{flex:1;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+
+    .testimonials{margin:32px 0;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .quote{padding:16px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+
+    footer{padding:36px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+    .flex{display:flex;gap:18px;align-items:center}
+
+    /* Animations */
+    @keyframes fadeUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+    @keyframes floatPulse{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+    @keyframes glowPulse{0%{box-shadow:0 0 0 rgba(124,58,237,0)}50%{box-shadow:0 0 22px rgba(124,58,237,0.4)}100%{box-shadow:0 0 0 rgba(124,58,237,0)}}
+
+    .hero,.card,.uc,.quote{animation:fadeUp 0.8s ease forwards}
+    .preview-card{animation:floatPulse 4s ease-in-out infinite}
+    .card:hover,.uc:hover{transform:translateY(-6px);transition:0.3s;border:1px solid rgba(124,58,237,0.5);animation:glowPulse 1.5s infinite}
+
+    /* Floating WhatsApp Icon */
+    #whatsapp-float{position:fixed;bottom:22px;right:22px;width:62px;height:62px;border-radius:50%;background:#25D366;display:flex;justify-content:center;align-items:center;box-shadow:0 6px 20px rgba(0,0,0,0.4);cursor:pointer;animation:floatPulse 3s infinite;z-index:999}
+    #whatsapp-float img{width:34px;height:34px}
+
+    /* Slide Form Button */
+    #offer-btn{position:fixed;top:50%;right:0;transform:translateY(-50%);background:linear-gradient(90deg,#ff8800,#ff0044);color:#fff;padding:12px 16px;border-radius:14px 0 0 14px;cursor:pointer;font-weight:700;writing-mode:vertical-rl;text-orientation:mixed;z-index:999}
+
+    /* Offer Form Panel */
+    #offer-panel{position:fixed;top:0;right:-360px;width:340px;height:100vh;background:#0f172a;border-left:2px solid rgba(255,255,255,0.1);padding:20px;transition:0.4s ease;z-index:9999;box-shadow:-4px 0 20px rgba(0,0,0,0.4)}
+    #offer-panel.open{right:0}
+    #offer-panel h2{color:#fff;margin-top:0;margin-bottom:12px}
+    #offer-panel .timer{font-size:24px;font-weight:700;color:#ff5c5c;margin-bottom:12px}
+    .old-price{color:#ff4e4e;text-decoration:line-through;font-size:18px}
+    .new-price{color:#7cffa3;font-size:26px;font-weight:700}
+    #offer-panel input{width:100%;padding:12px;border-radius:10px;margin-top:8px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:#fff}
+    #offer-panel button{width:100%;padding:12px;margin-top:14px;border:0;border-radius:10px;background:linear-gradient(90deg,#06b6d4,#7c3aed);color:#041025;font-weight:800;cursor:pointer}
+
+    /* FAQ */
+    .faq-section{padding:20px 0}
+    .faq-card{background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.03);border-radius:12px;padding:12px;margin-bottom:8px}
+    .faq-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600}
+    .faq-answer{display:none;margin-top:10px;color:var(--muted)}
+    .faq-card.open .faq-answer{display:block}
+    .faq-card .arrow{transition:transform .25s ease}
+    .faq-card.open .arrow{transform:rotate(90deg)}
+
+    /* Responsive */
+    @media (max-width:960px){.hero{grid-template-columns:1fr;gap:20px}.grid{grid-template-columns:repeat(2,1fr)}.testimonials{grid-template-columns:1fr}}
+    @media (max-width:640px){.container{padding:14px}nav ul{display:none}.grid{grid-template-columns:1fr}.preview-spark{height:160px}.hero{grid-template-columns:1fr;gap:12px}#offer-btn{top:40%}#offer-panel{width:85%}#demo>div{grid-template-columns:1fr !important}}
+
+    .pill{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:13px;color:var(--muted)}
+
+    /* Only mobile */
+ @media(max-width: 768px) {
+
+  .mobile-form-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    font-family: 'Anton', sans-serif;
+  }
+
+  /* LEFT SIDE (Board + Button) */
+  .form-left {
+    width: 60%;
+  }
+
+  /* Right side column */
+  .form-right {
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* Limited offer small */
+  .limited-offer-img-mobile {
+    width: 120px;
+    display: block;
+    margin-left: auto;   /* 👉 RIGHT SIDE le jayega */
+    margin-right: -140px;
+    margin-bottom: -60px;
+}
+
+
+  /* BOARD SMALLER */
+  .board-box-mobile {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    margin-left: 10px;   /* 👉 Board ko 10px right le gaya */
+}
+
+
+  .board-bg-mobile {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  /* Inputs inside board */
+  .input-area-mobile {
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    width: 80%;
+  }
+
+  .input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  .input-label {
+    font-size: 23px;
+    color: white;
+    width: 40%;
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .input-row input {
+    width: 55%;
+    height: 27px;
+    border-radius: 6px;
+    padding-left: 8px;
+    font-size: 12px;
+    border: none;
+    
+  }
+
+  /* Save button smaller + centered */
+  .save-btn-mobile {
+    width: 160px;
+    display: block;
+    margin: 12px auto 0;
+    margin-top: -2px;
+  }
+
+  /* TIMER SMALL RIGHT SIDE */
+  .timer-digit {
+    background: #00ff66;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    margin-top: 80px;
+  }
+
+  /* Cut price image */
+  .cut-price-mobile {
+    width: 90px;
+  }
+
+  /* New price ₹5 */
+ .new-price-mobile {
+    font-size: 75px; 
+    font-weight: 900;
+    color: #ffffff;
+    margin-top: -35px;   /* 👉 50px ऊपर ले गया */
+    margin-left: -20px;
+}
+
+
+/* ₹ NORMAL text (NO SHADOW at all) */
+.new-price-mobile .rs {
+    font-size: 25px;
+    font-weight: 600;
+    margin-right: 4px;
+    vertical-align: super;
+    color: #12ff61;        /* same color but NO glow */
+    text-shadow: none;     /* IMPORTANT */
+}
+
+/* 5 → only soft glow, NOT too bright */
+.new-price-mobile {
+    text-shadow:
+        0 0 4px #12ff61,
+        0 0 8px #0fa94a;   /* Low brightness shadow */
+}
+
+.lastbutton {
+    background: #ffe500;       /* 👉 Yellow background */
+    border: none;
+    border-radius: 5px;        /* 👉 Rounded corners */
+    padding: 10px 15px;        /* 👉 Inner spacing */
+    margin-top: 10px;          /* 👉 Space above */
+    margin-bottom: 10px;       /* 👉 Space below */
+    display: flex;
+    justify-content: center;   /* 👉 Image center */
+    align-items: center;
+    width: fit-content;
+    margin-left: auto;         /* 👉 Center horizontally */
+    margin-right: auto;  
+    height: 40px;      /* 👉 Center horizontally */
+}
+
+}
+
+@media(max-width: 768px) {
+
+  .mobile-form-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+
+    background: #001b26;
+    padding: 10px;
+    z-index: 99999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    border-top: 2px solid #0fa94a;  /* optional glow line */
+  }
+}
+@media(max-width: 768px) {
+  body {
+    padding-bottom: 930px; /* जितनी height तुमने form की रखी है */
+  }
+}
+@media (min-width: 1024px) {
+  #demo {
+    display: none !important;
+  }
+}
+@media (min-width: 1024px) {
+  .mobile-form-wrapper {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  #claim-offer {
+    display: none !important;
+  }
+  #offer-btn {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .fill-text-mobile {
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: none;  /* शुरुआत में hidden */
+  }
+}
+@media (max-width: 768px) {
+  .fill-text-mobile {
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .mobile-form-wrapper {
+    background: url('7.png') no-repeat center center;
+    background-size: cover;
+    border-radius: 14px;
+  }
+}
+
+
+
+
+.neon-hero {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.neon {
+  font-family: 'Anton', sans-serif;
+  color: #16f79a;
+  padding: 2px 10px;
+  border-radius: 6px;
+  background: rgba(22, 247, 154, 0.15);
+  text-shadow: 
+    0 0 80px #16f79a,
+    0 0 40px #16f79a,
+    
+}
+
+
+
+
+
+
+ 
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden><img  src="./image/logo.png" alt="V&V logo"></div>
+        <div>
+          
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <!-- navigation intentionally minimal for this build -->
+      </nav>
+
+      <div style="display:flex;gap:10px;align-items:center">
+        
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero" id="home">
+      <div>
+       
+       <h2 class="neon-hero">
+  LEARN TO BUILD YOUR FIRST <span class="neon">1 LAKH</span> ONLINE PER MONTH
+</h2>
+
+<style>
+  .neon-hero{
+    font-size: 40px;
+    font-weight: 900;
+    color: #0b1220;
+    font-family: "Anton", "Poppins", sans-serif;
+    margin: 0;
+    letter-spacing: .8px;
+  }
+
+  .neon{
+    color: #0b1220; /* fallback if gradient clipping not supported */
+    background: linear-gradient(90deg,#10b981,#34d399);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 6px 10px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(16,185,129,0.12);
+    position: relative;
+    display: inline-block;
+  }
+
+  /* neon outer glow */
+  .neon::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    filter: blur(12px);
+    background: linear-gradient(90deg,#10b98144,#34d39922);
+    opacity: .9;
+    z-index: -1;
+    transition: opacity .3s;
+  }
+
+  /* gentle pulsing glow */
+  @keyframes pulseGlow {
+    0%{ transform: scale(1); opacity: .9; }
+    50%{ transform: scale(1.02); opacity: 1; }
+    100%{ transform: scale(1); opacity: .9; }
+  }
+  .neon{
+    animation: pulseGlow 2.8s infinite ease-in-out;
+  }
+
+  /* small hover lift for interactivity */
+  .neon:hover{
+    transform: translateY(-6px);
+    transition: transform .22s;
+  }
+
+  @media (max-width: 480px){
+    .neon-hero{ font-size: 28px; }
+  }
+  .check-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 18px rgba(0,0,0,0.35);
+
+  white-space: nowrap;    /* 👉 हमेशा एक लाइन में */
+  overflow: hidden;       /* 👉 बाहर नहीं जाएगा */
+  text-overflow: ellipsis;/* 👉 जरूरत पड़ी तो "..." दिखेगा */
+}
+
+.tick-icon {
+  width: 38px;          
+  height: 38px;
+  object-fit: contain;
+}
+
+.check-item p {
+  margin: 0;
+  font-size: 20px;   /* 👉 छोटा किया ताकि एक लाइन में आए */
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+
+</style>
+
+        <div class="actions">
+          
+
+        </div>
+
+        <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap">
+          
+        </div>
+
+        <div style="margin-top:28px;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:10px">
+            
+            <div style="display:flex;gap:8px;align-items:center">
+              <svg width="46" height="24" viewBox="0 0 46 24" fill="none" aria-hidden><rect width="46" height="24" rx="4" fill="#0b1220" stroke="#111827"/></svg>
+              <svg width="46" height="24" viewBox="0 0 46 24" fill="none" aria-hidden><rect width="46" height="24" rx="4" fill="#0b1220" stroke="#111827"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="preview-card" aria-hidden>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          
+        </div>
+
+        <div class="video" style="margin-top:10px;">
+          <video style="width:100%; border-radius:18px;" src="./asset/video.webm" autoplay loop muted playsinline controls></video>
+        </div>
+
+      </aside>
+
+    </section>
+
+    <section class="container" id="features">
+  <h2 style="color:#fff;margin-bottom:8px;font-size:48px;font-weight:800;text-transform:uppercase;letter-spacing:1px;">
+  <span style="font-size:58px;font-weight:900;color:#ffffff;">
+    
+    <span style='color:#ffffff;'>WITH</span> 
+    <span style='font-size:90px;color:#39ff88;font-weight:900;'>5</span> 
+    <span style='color:#ffffff;'>FREE</span> 
+    
+    <!-- 🟣 तुमने दिया हुआ नया AI icon -->
+    <img src="51.png" 
+         style="width:100px;height:100px;vertical-align:middle;margin-left:6px;display:inline-block; ">
+         
+    AI TOOLS
+  </span>
+</h2>
+
+</section>
+
+<!-- NEW CHECKLIST SECTION ADDED -->
+<section class="checklist-section">
+
+  <div class="check-item">
+    <img src="tik.png" class="tick-icon">
+    <p>If you want upgraded skills</p>
+  </div>
+
+  <div class="check-item">
+    <img src="tik.png" class="tick-icon">
+    <p>If you want 1st online income</p>
+  </div>
+
+  <div class="check-item">
+    <img src="tik.png" class="tick-icon">
+    <p>If you want to outperform</p>
+  </div>
+
+  <div class="check-item">
+    <img src="tik.png" class="tick-icon">
+    <p>If you want practical learning</p>
+  </div>
+
+  <div class="check-item">
+    <img src="tik.png" class="tick-icon">
+    <p>If you want proven success</p>
+  </div>
+
+</section>
+
+
+
+<section class="container" id="reviews">
+ 
+  <div class="grid" style="margin-top:16px">
+
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+        <img src="./image/ayushi.png" style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
+        <h3 style="margin:0">Aditi Thakur</h3>
+      </div>
+      <div style="color:#ffd95a;font-size:16px;margin-bottom:6px;">
+        ⭐⭐⭐⭐✰ <span style='color:#39ff88'>(4.2/5)</span>
+      </div>
+      <p class="muted">“I was honestly amazed to see what they offer for just ₹5. Totally unexpected! Didn’t feel like the class should end.”</p>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+        <img src="./image/next1man.png" style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
+        <h3 style="margin:0">Rohan Mehta</h3>
+      </div>
+      <div style="color:#ffd95a;font-size:16px;margin-bottom:6px;">
+        ⭐⭐⭐⭐✰ <span style='color:#39ff88'>(3.9/5)</span>
+      </div>
+      <p class="muted">“Kaafi sahi laga! Best ₹500 I’ve invested. I missed the ₹5 discounted deal but I’m ready to join more classes at ₹500 too.”</p>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+        <img src="./image/next3.png" style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
+        <h3 style="margin:0">Simran Kaur</h3>
+      </div>
+      <div style="color:#ffd95a;font-size:16px;margin-bottom:6px;">
+        ⭐⭐⭐⭐⭐ <span style='color:#39ff88'>(4.8/5)</span>
+      </div>
+      <p class="muted">“I didn’t want the session to end. Wish they release more such live classes — super engaging and totally worth it.”</p>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+        <img src="./image/next4.png" style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
+        <h3 style="margin:0">Arjun Verma</h3>
+      </div>
+      <div style="color:#ffd95a;font-size:16px;margin-bottom:6px;">
+        ⭐⭐⭐✰✰ <span style='color:#39ff88'>(3.4/5)</span>
+      </div>
+      <p class="muted">“Surprised by the value! ₹5 mein itna milega socha nahi tha. Definitely joining more classes ahead..”</p>
+    </div>
+
+  </div>
+</section>
+
+    <section class="faq-section container">
+  <h2 style="color:#fff;margin-bottom:12px">Full-Length FAQs - Webinar Details</h2>
+
+  <div class="faq-card"><div class="faq-question">What will I learn in this webinar? <span class="arrow">▶</span></div><div class="faq-answer">You will learn how to turn an idea into a complete brand using five powerful AI tools that are completely free to use. In the session, we cover the full journey: converting an idea into a business plan, creating legal documents and templates, designing brand creatives like logos, generating videos for your brand, building a simple website, and learning how to reach your first 100 customers.</div></div>
+
+  <div class="faq-card"><div class="faq-question">Is this session live or recorded? <span class="arrow">▶</span></div><div class="faq-answer">This is a completely live 60‑minute session conducted by real educators. You interact, learn in real time, and follow a practical demonstration using a real‑life example.</div></div>
+
+  <div class="faq-card"><div class="faq-question">What do I need to attend the class? <span class="arrow">▶</span></div><div class="faq-answer">All you need is a mobile phone or laptop and a working internet connection. No additional software or setup is required.</div></div>
+
+  <div class="faq-card"><div class="faq-question">Is the webinar priced at ₹500 or ₹5? <span class="arrow">▶</span></div><div class="faq-answer">The content you receive is worth ₹500, but as part of a New Year early‑bird promotion, the first 100 users get access for just ₹5. Once the timer ends or the discounted seats are over, the price automatically shifts to ₹500.</div></div>
+
+  <div class="faq-card"><div class="faq-question">Will I get a certificate and notes? <span class="arrow">▶</span></div><div class="faq-answer">Yes. You will receive a course completion certificate as well as a downloadable PDF handbook with all tool links, steps, and revision notes.</div></div>
+
+  <div class="faq-card"><div class="faq-question">What AI tools will be covered? <span class="arrow">▶</span></div><div class="faq-answer">We cover five AI tools available for free to everyone for business planning, documents, creatives, videos, and website building.</div></div>
+
+  <div class="faq-card"><div class="faq-question">What if I miss my session? <span class="arrow">▶</span></div><div class="faq-answer">We conduct six sessions daily from 10 AM to 9 PM. You can select any batch that suits your schedule.</div></div>
+
+  <div class="faq-card"><div class="faq-question">Who should join this webinar? <span class="arrow">▶</span></div><div class="faq-answer">Students, freelancers, creators, entrepreneurs, job‑seekers, and anyone wanting to learn practical AI skills or start a business.</div></div>
+
+  <div class="faq-card"><div class="faq-question">What happens after I pay and register? <span class="arrow">▶</span></div><div class="faq-answer">A V&V educator will contact you within 0–24 hours to confirm your batch timing and provide the webinar link and login password.</div></div>
+
+  <div class="faq-card"><div class="faq-question">What if my payment fails or I face issues while registering? <span class="arrow">▶</span></div><div class="faq-answer">Click the WhatsApp Support button and our team will help resolve your issue.</div></div>
+</section>
+
+    <!-- <section class="container center" id="pricing">
+      <h2 style="color:#fff;margin-bottom:6px">Start building with AI</h2>
+      <p class="muted">Start free with V&V. Scale to powerful enterprise plans with guaranteed SLAs and dedicated support.</p>
+
+      <div style="display:flex;gap:14px;justify-content:center;margin-top:18px;flex-wrap:wrap">
+        <div class="card" style="min-width:220px;max-width:320px"><h3>Starter</h3><div style="font-weight:700;font-size:20px">Free</div><p class="muted">Basic usage, limited integrations, community support.</p><div style="margin-top:10px"><a class="btn" href="#" onclick="toggleOffer(); startCountdown(1800);">Get started</a></div></div>
+        <div class="card" style="min-width:220px;max-width:320px;border:1px solid rgba(255,255,255,0.06);box-shadow:0 10px 30px rgba(7,13,28,0.6)"><h3>Team</h3><div style="font-weight:700;font-size:20px">₹7,000 </div><p class="muted">Team seats, priority support, and more integrations.</p><div style="margin-top:10px"><a class="btn" href="#signup">Start trial</a></div></div>
+      </div>
+    </section> -->
+
+    <!-- <section class="container" id="demo" style="margin-top:28px">
+      <div style="display:grid;grid-template-columns:1fr 380px;gap:18px;align-items:start">
+        <div>
+          <h2 style="margin:0 0 8px;color:#fff">Request a personalized demo</h2>
+          <p class="muted">Tell us about your use case and we'll show a quick prototype tailored to your data.</p>
+
+          <form id="demo-form" onsubmit="handleSubmit(event)" style="margin-top:12px;display:grid;gap:10px;max-width:640px">
+            <input name="name" placeholder="Your name" required style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff">
+            <input name="email" type="email" placeholder="Email" required style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff">
+            <textarea name="message" rows="3" placeholder="Short description of your use case" style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff"></textarea>
+            <div style="display:flex;gap:10px">
+              <button class="btn" type="submit">Request demo</button>
+              <button type="button" class="btn ghost" onclick="openChat()">Chat with us</button>
+            </div>
+          </form>
+        </div>
+
+        
+
+      </div>
+    </section> -->
+
+  </main>
+
+  <!-- WhatsApp Floating Button -->
+  
+
+  <!-- Offer Slide Button -->
+  <div id="offer-btn" onclick="toggleOffer()">SAVE MY SPOT</div>
+
+  <!-- Offer Form Panel -->
+  <div id="offer-panel" aria-hidden="true">
+  
+  <div class="timer" id="countdown">30:00</div>
+
+  <div>
+    <span class="old-price">₹500</span> → <span class="new-price">₹5</span>
+  </div>
+
+  <input type="text" id="offer-name" placeholder="Your Name (A–Z only)" pattern="[A-Za-z ]+" required>
+  <input type="text" id="offer-mobile" placeholder="Mobile Number (10 digits)" maxlength="10" pattern="[0-9]{10}" required>
+  <input type="text" id="offer-city" placeholder="City" required>
+  <input type="email" id="offer-email" placeholder="Email ID" required>
+
+  <button id="claim-offer">SAVE MY SPOT</button>
+</div>
+
+
+
+
+<!-- from  stat here that the point  --> 
+ <p class="fill-text-mobile">Please fill the form</p>
+
+<div class="mobile-form-wrapper">
+
+  <div class="form-left">
+
+    <img src="6.png" class="limited-offer-img-mobile">
+
+    <div class="board-box-mobile">
+      <img src="5.png" class="board-bg-mobile">
+
+      <div class="input-area-mobile">
+        <div class="input-row">
+          <span class="input-label">Name</span>
+          <input type="text" name="name" required>
+        </div>
+
+        <div class="input-row">
+          <span class="input-label">Number</span>
+          <input type="number" name="phone" required>
+        </div>
+
+        <div class="input-row">
+          <span class="input-label">E-mail</span>
+          <input type="email" name="email" required>
+        </div>
+
+        <div class="input-row">
+          <span class="input-label">City</span>
+          <input type="text" name="city" required>
+        </div>
+      </div>
+    </div>
+
+    <button class="lastbutton" id="payBtn">
+      <img src="3.png" class="save-btn-mobile">
+    </button>
+
+  </div>
+
+  <div class="form-right">
+
+    <div class="timer-box">
+        <div class="timer-digit" id="countdown">29 : 56</div>
+    </div>
+
+    <img src="4.png" class="cut-price-mobile">
+
+    <p class="new-price-mobile">
+      <span class="rs">₹</span>5
+    </p>
+
+  </div>
+
+</div>
+
+
+
+
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="logo" style="width:52px;height:52px">V&V</div>
+          <div>
+            
+           
+          </div>
+        </div>
+
+        <div style="display:flex;gap:18px;align-items:center">
+          <div class="tiny muted">© V&V.ai 2025</div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- Expert Help Section -->
+<!-- WHATSAPP EXPERT HELP SECTION -->
+<div style="
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 0;
+  margin-top: 40px;
+">
+  <p style="margin: 0; font-size: 22px; font-weight: 700; color: #ffffff;">
+    Still Unsure? Talk to an expert now.
+  </p>
+
+  <a href="https://wa.me/918707573585" target="_blank" style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 12px;
+      background: #25D366;
+      box-shadow: 0 0 18px rgba(37, 211, 102, 0.45);
+  ">
+      <i class="fa-brands fa-whatsapp" style="font-size: 30px; color: #ffffff;"></i>
+  </a>
+</div>
+
+
+  </footer>
+  <section class="container" id="demo" style="margin-top:28px">
+      <div style="display:grid;grid-template-columns:1fr 380px;gap:18px;align-items:start">
+        <div>
+          <h2 style="margin:0 0 8px;color:#fff">Request a personalized demo</h2>
+          <p class="muted">Tell us about your use case and we'll show a quick prototype tailored to your data.</p>
+
+          <form id="demo-form" onsubmit="handleSubmit(event)" style="margin-top:12px;display:grid;gap:10px;max-width:640px">
+            <input name="name" placeholder="Your name" required style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff">
+            <input name="email" type="email" placeholder="Email" required style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff">
+           
+          </form>
+        </div>
+
+        
+
+      </div>
+    </section>
+
+
+
+
+  <script>
+    // Offer panel toggle
+    const offerBtn = document.getElementById('offer-btn');
+    const offerPanel = document.getElementById('offer-panel');
+    function toggleOffer(){
+      offerPanel.classList.toggle('open');
+      offerPanel.setAttribute('aria-hidden', !offerPanel.classList.contains('open'));
+    }
+
+    // Countdown timer (starts at 30:00 when opened)
+    let countdownInterval = null;
+    function startCountdown(seconds=1800){
+      clearInterval(countdownInterval);
+      const display = document.getElementById('countdown');
+      let s = seconds;
+      display.textContent = formatTime(s);
+      countdownInterval = setInterval(()=>{
+        s--;
+        if(s<0){ clearInterval(countdownInterval); display.textContent='00:00'; return; }
+        display.textContent = formatTime(s);
+      },1000);
+    }
+    function formatTime(s){
+      const m = Math.floor(s/60).toString().padStart(2,'0');
+      const sec = (s%60).toString().padStart(2,'0');
+      return `${m}:${sec}`;
+    }
+
+    offerBtn.addEventListener('click', ()=> startCountdown(1800));
+
+    // Claim offer (simple client-side validation)
+    document.getElementById('claim-offer').addEventListener('click', ()=>{
+      const name = document.getElementById('offer-name');
+      const mobile = document.getElementById('offer-mobile');
+      const city = document.getElementById('offer-city');
+      const email = document.getElementById('offer-email');
+      if(!name.value.match(/^[A-Za-z ]+$/)){ alert('Name: only letters and spaces allowed'); name.focus(); return; }
+      if(!mobile.value.match(/^\d{10}$/)){ alert('Enter a valid 10 digit mobile number'); mobile.focus(); return; }
+      if(!city.value.trim()){ alert('Please enter city'); city.focus(); return; }
+      if(!email.value || !email.value.includes('@')){ alert('Enter a valid email'); email.focus(); return; }
+
+      // TODO: replace with real submission (fetch / API)
+      
+      offerPanel.classList.remove('open');
+    });
+
+    // Demo form submit handler (placeholder)
+   
+
+    function openChat(){ window.open('https://wa.me/91XXXXXXXXXX','_blank'); }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-card').forEach(card=>{
+      const q = card.querySelector('.faq-question');
+      q.addEventListener('click', ()=>{ card.classList.toggle('open'); });
+    });
+
+    // Accessibility: close offer panel with ESC
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ offerPanel.classList.remove('open'); } });
+
+  </script>
+  
+
+<script>
+function openMobileForm() {
+  
+  // Form को 20px ऊपर उठाना
+  const form = document.querySelector(".mobile-form-wrapper");
+  form.style.transform = "translateY(-20px)";
+  form.style.transition = "0.4s ease";
+
+  // “Please fill the form” दिखाना
+  const fillText = document.querySelector(".fill-text-mobile");
+  fillText.style.display = "block";
+
+  // Timer भी चालू रखना है
+  startCountdown(1800);
+
+  // Offer panel वाला पुराना toggle हट गया
+}
+</script>
+<script>
+document.querySelector('.btn[title="Get demo"]').addEventListener('click', () => {
+
+  // Form को ऊपर उठाओ
+  const form = document.querySelector(".mobile-form-wrapper");
+  form.style.transform = "translateY(-20px)";
+  form.style.transition = "0.35s ease";
+
+  // Please fill the form दिखाओ
+  const fillText = document.querySelector(".fill-text-mobile");
+  fillText.style.display = "block";
+});
+</script>
+
+
+<script>
+  document.getElementById("payBtn").addEventListener("click", async function(e){
+    e.preventDefault();
+
+    const name  = document.querySelector("input[name='name']").value;
+    const email = document.querySelector("input[name='email']").value;
+    const phone = document.querySelector("input[name='phone']").value;
+
+    if (!name.trim()) return alert("Please enter Name");
+    if (!phone.match(/^\d{10}$/)) return alert("Enter a valid 10-digit number");
+    if (!email.includes("@")) return alert("Enter a valid Email");
+
+    const payload = {
+      amount: 5,
+      customerName: name,
+      customerEmail: email,
+      customerPhone: phone
+    };
+
+    try {
+      const response = await fetch("https://api.vandvagro.com/api/payment/create-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await response.json();
+      if (!data.success) return alert("Payment Error: " + data.error);
+
+      const sessionId = data.payment_session_id;
+      const cashfree = Cashfree({ mode: "production" });
+
+      cashfree.checkout({
+        paymentSessionId: sessionId,
+        redirectTarget: "_self"
+      });
+
+    } catch (err) {
+      alert("Payment Failed: " + err.message);
+    }
+  });
+</script>
+
+
+
+
+
+
+
+
+<script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+
+</body>
+</html>
