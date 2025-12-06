@@ -196,12 +196,12 @@
 
   /* TIMER SMALL RIGHT SIDE */
   .timer-digit {
-    background: #00ff66;
+    background: #ed0501;
     padding: 6px 12px;
     border-radius: 8px;
     font-size: 22px;
-    font-weight: bold;
-    color: black;
+    font-weight:100;
+    color: rgb(255, 255, 255);
     margin-top: 80px;
   }
 
@@ -350,6 +350,363 @@
     0 0 40px #16f79a,
     
 }
+
+@media (max-width: 768px) {
+  .expert-box-mobile-fix {
+    margin-left: -10px !important;  /* 👉 left side पर 20px अंदर ले आया */
+     /* optional अगर दोनों तरफ balance चाहिए */
+  }
+}
+/* MAIN WRAPPER */
+/* MAIN SECTION */
+.trust-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* LEFT TEXT */
+.trust-left {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.trust-small {
+    font-size: 42px;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0;
+}
+
+.trust-big {
+    font-size: 120px;
+    font-weight: 900;
+    color: #00ff66;
+    margin: 0;
+}
+
+/* RIGHT ICON */
+.trust-icon {
+    width: 180px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+
+    .trust-wrapper {
+        flex-direction: row;    /* side by side mobile me bhi */
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .trust-small {
+        font-size: 32px;
+    }
+
+    .trust-big {
+        font-size: 92px;
+    }
+
+    .trust-icon {
+        width: 110px;
+        position: relative;
+        right: 40px; 
+    }
+}
+.checklist-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* 👉 पूरा सेक्शन center */
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.check-item {
+  width: 80%;              /* 👉 Center-align के लिए perfect width */
+  max-width: 900px;        /* 👉 Laptop पर सीमित चौड़ाई */
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 12px;
+}
+
+.check-item p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Tick icon size fix */
+.tick-icon {
+  width: 42px;
+  height: 42px;
+}
+
+/* MAIN WRAPPER */
+.know-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* TOP LINE: EVERYTHING YOU NEED */
+.know-top {
+    color: #ffffff;
+    font-size: 52px;
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;   /* Break नहीं होगा */
+}
+
+/* BOTTOM LINE: TO KNOW */
+.know-bottom {
+   font-family: 'Anton', sans-serif;
+    color: #00ff66;
+    font-size: 240px;
+    font-weight: 100;
+    margin: -10px 0 0 0;
+    text-transform: uppercase;
+    white-space: nowrap;   /* हमेशा एक लाइन में रहेगा */
+    text-shadow: 
+        0 0 8px #00ff66,
+        
+}
+
+/* RESPONSIVE: MOBILE VIEW */
+@media (max-width: 768px) {
+
+    .know-top {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+
+    .know-bottom {
+        font-size: 115px;        /* Fit on small screens */
+    } 
+    .need{ 
+      font-size: 55px;
+    }
+}
+
+.need {
+    font-size: 75px;   /* Laptop size */
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .need {
+        font-size: 36px !important;   /* 👉 Mobile पर छोटा size */
+    }
+}
+.really-section {
+    display: flex;
+    justify-content: center;   /* Center align total layout */
+    align-items: center;
+    gap:100px;                 /* 👉 Left & Right ko pass laaye */
+    padding: 40px 20px;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.really-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.really-left h2 {
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    font-family: 'Anton', sans-serif;
+}
+
+/* TOP */
+.really-top {
+    font-size: 70px;
+    color: white;
+}
+
+/* MIDDLE (REALLY) */
+.really-mid {
+    font-size: 110px;
+    color: #00ff84;
+}
+
+/* BOTTOM */
+.really-bottom {
+    font-size: 70px;
+    color: white;
+    margin-top: 12px;
+}
+
+/* ICON */
+.question-icon {
+    width: 260px;
+    height: auto;
+}
+
+
+@media (max-width: 768px) {
+    .really-section {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 20px 12px;
+        
+    }
+
+    .really-top { font-size: 52px; }
+    .really-mid { font-size: 85px; }
+    .really-bottom { 
+        font-size: 52px;
+        margin-top: 6px;
+    }
+
+    .question-icon {
+        width: 350px;   /* Perfect mobile fit */
+        margin-top: -2px;
+        height: 210px;
+    }
+}
+
+/* Default: Laptop View */
+.yes-img {
+    display: block;
+    margin: 0 auto;        /* 👉 Laptop पर Centre */
+    width: 650px;      
+    position: relative; 
+    right: 40px;  /* आप चाहें तो adjust कर सकते हो */
+}
+.feature-title1{ 
+  position: relative;
+  top: 20px;
+}
+.feature-sub1{ 
+  position: relative;
+  top: 20px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .yes-img {
+        width: 560px;           /* 👉 थोड़ा छोटा ताकि fit रहे */
+        margin: 0 auto;         /* Mobile में भी center रहे */
+        padding-left: 25px !important;     /* 👉 Left-right gap थोड़ा कम */
+        
+    }
+}
+.features-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);   /* Laptop = 4 icons in one row */
+    gap: 40px;
+    text-align: center;
+    margin-right: 200px;
+    position: relative;
+    right: 40px;
+}
+
+.feature-icon {
+    width: 110px;
+    margin: 0 auto 10px;
+}
+
+.feature-title {
+    font-size: 40px;
+    font-weight: 900;
+    color: #00ff84;
+    margin: 5px 0 0;
+    font-family: 'Anton', sans-serif;
+}
+
+.feature-sub {
+    color: #d2d2d2;
+    font-size: 18px;
+    margin-top: 4px;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
+/* 📱 MOBILE VIEW — 2 items per row */
+@media (max-width: 768px) {
+    .features-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 10px;
+        margin-left: 30px;
+        
+    }
+
+    .feature-icon {
+        width: 170px;
+    }
+
+    .feature-title {
+        font-size: 28px;
+        position: relative;
+    }
+
+    .feature-sub {
+        font-size: 14px;
+        font-weight: 800;
+    }
+    .feature-title1{ 
+      position: relative;
+      top: 25px;
+    }
+    .feature-sub1{ 
+      position: relative;
+      top: 25px;
+    }
+}
+
+/* --- BOTTOM TEXTS ONE LINE + SMALLER --- */
+.feature-sub,
+.feature-sub1 {
+    font-size: 14px;        /* 👉 Text chhota */
+    white-space: nowrap;    /* 👉 Ek hi line me force */
+    text-align: center;
+    margin-top: 4px;
+}
+
+/* Laptop & desktop me thoda bada */
+@media (min-width: 1024px) {
+    .feature-sub,
+    .feature-sub1 {
+        font-size: 18px;    /* 👉 Laptop me bigger */
+    }
+}
+
+/* Mobile me aur compact */
+@media (max-width: 768px) {
+    .feature-sub,
+    .feature-sub1 {
+        font-size: 12px;    /* 👉 Mobile size smaller */
+        white-space: nowrap;
+    }
+}
+
 
 
 
@@ -509,6 +866,9 @@
 
     </section>
 
+   
+
+
     <section class="container" id="features">
   <h2 style="color:#fff;margin-bottom:8px;font-size:48px;font-weight:800;text-transform:uppercase;letter-spacing:1px;">
   <span style="font-size:58px;font-weight:900;color:#ffffff;">
@@ -524,8 +884,52 @@
     AI TOOLS
   </span>
 </h2>
+ <section class="features-section">
+
+  <div class="feature-box">
+    <img src="frist.png" class="feature-icon">
+    <h3 class="feature-title">60 MIN</h3>
+    <p class="feature-sub">SLOT AVAILABLE DAILY</p>
+  </div>
+
+  <div class="feature-box">
+    <img src="frist2.png" class="feature-icon">
+    <h3 class="feature-title">REAL</h3>
+    <p class="feature-sub">USER CASE LEARNING</p>
+  </div>
+
+  <div class="feature-box">
+    <img src="frist3.png" class="feature-icon">
+    <h3 class="feature-title">LIVE</h3>
+    <p class="feature-sub">POWER SESSION BY EXPERTS</p>
+  </div>
+
+  <div class="feature-box">
+    <img src="frist4.png" class="feature-icon">
+    <h3 class="feature-title feature-title1 ">CERTIFICATES</h3>
+    <p class="feature-sub feature-sub1">FOR COURSE COMPLETION</p>
+  </div>
 
 </section>
+
+</section> 
+
+ <section class="really-section">
+  <div class="really-left">
+      <h2 class="really-top">DO YOU</h2>
+      <h2 class="really-mid">REALLY</h2>
+      <h2 class="really-bottom">NEED THIS</h2>
+  </div>
+
+  <div class="really-right">
+      <img src="question.png" class="question-icon">
+  </div>
+</section> 
+
+<img src="yesname.png" class="yes-img" alt="YES">
+
+
+
 
 <!-- NEW CHECKLIST SECTION ADDED -->
 <section class="checklist-section">
@@ -556,6 +960,21 @@
   </div>
 
 </section>
+
+
+<section class="trust-wrapper">
+    
+    <!-- LEFT TEXT -->
+    <div class="trust-left">
+        <p class="trust-small">RESULTS YOU CAN</p>
+        <p class="trust-big">TRUST</p>
+    </div>
+
+    <!-- RIGHT ICON -->
+    <img src="logobtan.png" class="trust-icon">
+
+</section>
+
 
 
 
@@ -610,8 +1029,14 @@
   </div>
 </section>
 
+<section class="know-section">
+  <h2 class="know-top">EVERYTHING <span class="need" >YOU NEED</span></h2>
+  <h2 class="know-bottom"><span style="color: white;">TO</span> KNOW</h2>
+</section>
+
+
     <section class="faq-section container">
-  <h2 style="color:#fff;margin-bottom:12px">Full-Length FAQs - Webinar Details</h2>
+  
 
   <div class="faq-card"><div class="faq-question">What will I learn in this webinar? <span class="arrow">▶</span></div><div class="faq-answer">You will learn how to turn an idea into a complete brand using five powerful AI tools that are completely free to use. In the session, we cover the full journey: converting an idea into a business plan, creating legal documents and templates, designing brand creatives like logos, generating videos for your brand, building a simple website, and learning how to reach your first 100 customers.</div></div>
 
@@ -695,7 +1120,7 @@
 
 
 <!-- from  stat here that the point  --> 
- <p class="fill-text-mobile">Please fill the form</p>
+ 
 
 <div class="mobile-form-wrapper">
 
@@ -774,7 +1199,7 @@
     </div>
     <!-- Expert Help Section -->
 <!-- WHATSAPP EXPERT HELP SECTION -->
-<div style="
+<div class="expert-box-mobile-fix" style="
   width: 100%;
   display: flex;
   justify-content: center;
@@ -783,7 +1208,7 @@
   padding: 20px 0;
   margin-top: 40px;
 ">
-  <p style="margin: 0; font-size: 22px; font-weight: 700; color: #ffffff;">
+  <p style="margin: 0; font-size: 22px; font-weight: 700; color: #ffffff; margin-left: 14px;">
     Still Unsure? Talk to an expert now.
   </p>
 
