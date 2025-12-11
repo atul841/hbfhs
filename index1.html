@@ -13,7 +13,8 @@
    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-
+ <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  
 
   <style>
 
@@ -357,8 +358,7 @@
      /* optional अगर दोनों तरफ balance चाहिए */
   }
 }
-/* MAIN WRAPPER */
-/* MAIN SECTION */
+
 .trust-wrapper {
     width: 100%;
     display: flex;
@@ -366,6 +366,7 @@
     align-items: center;
     gap: 40px;
     margin-top: 40px;
+    
 }
 
 /* LEFT TEXT */
@@ -427,7 +428,7 @@
 }
 
 .check-item {
-  width: 80%;              /* 👉 Center-align के लिए perfect width */
+  width: 100%;              /* 👉 Center-align के लिए perfect width */
   max-width: 900px;        /* 👉 Laptop पर सीमित चौड़ाई */
   display: flex;
   align-items: center;
@@ -461,7 +462,7 @@
 /* TOP LINE: EVERYTHING YOU NEED */
 .know-top {
     color: #ffffff;
-    font-size: 52px;
+    font-size: 48px;
     font-weight: 900;
     margin: 0;
     text-transform: uppercase;
@@ -473,7 +474,7 @@
 .know-bottom {
    font-family: 'Anton', sans-serif;
     color: #00ff66;
-    font-size: 240px;
+    font-size: 220px;
     font-weight: 100;
     margin: -10px 0 0 0;
     text-transform: uppercase;
@@ -500,7 +501,7 @@
 }
 
 .need {
-    font-size: 75px;   /* Laptop size */
+    font-size: 70px;   /* Laptop size */
     font-weight: 900;
     white-space: nowrap;
 }
@@ -661,6 +662,9 @@
     .feature-icon {
         width: 170px;
     }
+    .feature-icon1{ 
+      width: 155px;
+    }
 
     .feature-title {
         font-size: 28px;
@@ -673,11 +677,11 @@
     }
     .feature-title1{ 
       position: relative;
-      top: 25px;
+      top: 13px;
     }
     .feature-sub1{ 
       position: relative;
-      top: 25px;
+      top: 14px;
     }
 }
 
@@ -702,51 +706,159 @@
 @media (max-width: 768px) {
     .feature-sub,
     .feature-sub1 {
-        font-size: 12px;    /* 👉 Mobile size smaller */
+        font-size: 12px;    /*   👉 Mobile size smaller */
         white-space: nowrap;
     }
+}
+
+
+.hero-image-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.hero-main-image {
+  width: 80%;
+  max-width: 600px;   /* Laptop me perfect */
+  height: auto;
+  display: block;
+}
+
+/* Mobile View */
+@media(max-width: 768px) {
+  .hero-main-image {
+    width: 95%;
+    max-width: 380px; 
+    margin-top: -35px; /* Mobile ke liye fit */
+  }
+} 
+@media (max-width:768px) {
+  .video{ 
+    margin-top: -200px;
+  }
+}
+
+/* Default (Laptop/Desktop) — No change */
+
+
+/* Mobile view only */
+/* Default (Laptop/Desktop) */
+.video-mobile-fix {
+    margin-top: 10px;
+}
+
+/* Mobile only */
+@media(max-width: 768px) {
+  .video-mobile-fix {
+      margin-top: 90px !important;  /* 👉 वीडियो ऊपर जाएगा */
+  }
+}
+
+
+.video-block {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* ICON (Desktop) → video ke bilkul upar, center me) */
+.play-unmute-icon {
+    position: absolute;
+    top: -80px;          /* video se JUST upar */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    z-index: 9999;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+    .play-unmute-icon {
+        top: -150px;      /* mobile me thoda close */
+        width: 200px;
+        margin-top: -20px;
+    }
+}
+
+  
+@media (min-width: 992px) {
+  .expert-box-mobile-fix {
+    margin-left: -90px !important; /* 👉 laptop पर थोड़ा left ले जाएगा */
+  }
+
+  .expert-text-laptop {
+    margin-left: -20px !important;
+  }
+}
+
+/* Laptop / Desktop only */
+@media (min-width: 1024px) {
+
+  .faq-section {
+      width: 70%;          /* section को slim किया */
+      margin: 10 auto 0 0;  /* LEFT ALIGN – zoom में नहीं हिलेगा */
+      margin-left: 150px;
+  }
+
+  .faq-card {
+      max-width: 650px;    /* cards की width भी controlled */
+  }
+
+}
+
+
+@media (min-width: 1024px) {
+  .know-section {
+      margin-left: -500px;   /* jitna left shift chahiye, value badha sakte ho */
+     
+  }
+}
+@media (min-width: 1024px) {
+  .card3 {
+      /* जितना left shift चाहिए उतना बढ़ा सकते हो */
+      position: relative;
+      right: 350px;
+      top: 230px;
+  }
+}
+@media (min-width: 1024px) {
+  .trust-wrapper {
+      margin-left: -260px;   /* jitna shift chahiye, value badha sakte ho */
+  }
+}
+
+
+@media (min-width: 1024px) {
+
+  .checklist-section {
+      width: 620px;          /* fixed safe width – corner पर नहीं जाएगा */
+      margin-left: 190px;     /* left side पर रहेगा but corner पर नहीं चिपकेगा */
+  }
+
+  .check-item {
+      width: 100%;
+  }
 }
 
 
 
 
 
+@media (min-width: 1024px) {
+  .really-section {
+      margin-left: -80px;   /* jitna left shift chahiye, value badha sakte ho */
+  }
+}
 
-
- 
-
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden><img  src="./image/logo.png" alt="V&V logo"></div>
-        <div>
-          
-        </div>
-      </div>
-
-      <nav aria-label="Primary navigation">
-        <!-- navigation intentionally minimal for this build -->
-      </nav>
-
-      <div style="display:flex;gap:10px;align-items:center">
-        
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="container hero" id="home">
-      <div>
-       
-       <h2 class="neon-hero">
-  LEARN TO BUILD YOUR FIRST <span class="neon">1 LAKH</span> ONLINE PER MONTH
-</h2>
-
-<style>
-  .neon-hero{
+@media (min-width: 1024px) {
+  .yes-img {
+      margin-left: 200px;   /* jitna left shift chahiye, value badha sakte ho */
+  }
+}
+     .neon-hero{
     font-size: 40px;
     font-weight: 900;
     color: #0b1220;
@@ -795,7 +907,8 @@
   .neon:hover{
     transform: translateY(-6px);
     transition: transform .22s;
-  }
+  } 
+ 
 
   @media (max-width: 480px){
     .neon-hero{ font-size: 28px; }
@@ -814,6 +927,7 @@
   white-space: nowrap;    /* 👉 हमेशा एक लाइन में */
   overflow: hidden;       /* 👉 बाहर नहीं जाएगा */
   text-overflow: ellipsis;/* 👉 जरूरत पड़ी तो "..." दिखेगा */
+  
 }
 
 .tick-icon {
@@ -830,8 +944,112 @@
   letter-spacing: 0.3px;
 }
 
+@media (min-width: 1024px) {
 
-</style>
+  /* HERO SECTION को flex बना दो */
+  .hero {
+      display: flex;
+      flex-direction: column; /* image नीचे लाने के लिए */
+      align-items: flex-start; /* left align */
+      gap: 30px; /* spacing */
+  }
+
+  /* image box को नीचे move कर दो */
+  .hero-image-box {
+      order: 2;  /* नीचे ले आएगा */
+      margin-left: -30px; /* left side set */
+  }
+
+  /* video वाला aside ऊपर होगा */
+  .preview-card {
+      order: 1;
+      margin-left: -55px; /* left aligned */
+      width: 60%; /* optional: better alignment */
+  }
+
+}
+
+ @media (min-width: 1024px) {
+  
+  /* पूरे FEATURES SECTION को थोड़ा left ले आओ */
+  #features {
+      width: 60%;        /* zoom-safe balanced width */
+      margin-left: 40px; /* adjust left shift (25–60px भी कर सकते हो) */
+  }
+
+  /* अंदर वाले feature boxes भी clean left aligned रहें */
+  .features-section {
+      width: 55%;
+      margin-left: 20px;
+  } 
+  .feature-box{ 
+    width: 190%;
+  } 
+  .feature-title{ 
+   font-size: 30px;
+  } 
+  .feature-sub{ 
+    font-size: 12px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  #reviews {
+      width: 85%;         /* zoom safe width */
+      margin-left: 100px;  /* left shift */
+  }
+
+  #reviews .grid {
+      width: 100%;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .expert-box-mobile-fix {
+      margin-left: 130px;   /* बस इतना ही left shift – adjust भी कर सकते हो */
+     position: relative;
+     top: -100px;
+     right: 250px;
+  }
+}   
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden><img  src="./image/logo.png" alt="V&V logo"></div>
+        <div>
+          
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <!-- navigation intentionally minimal for this build -->
+      </nav>
+
+      <div style="display:flex;gap:10px;align-items:center">
+        
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero" id="home">
+      <div>
+       
+          <div class="hero-image-box">
+          <img src="IMG_5339.PNG" class="hero-main-image">
+         </div>
+
+
+           
 
         <div class="actions">
           
@@ -842,27 +1060,43 @@
           
         </div>
 
-        <div style="margin-top:28px;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
-          <div style="display:flex;align-items:center;gap:10px">
-            
-            <div style="display:flex;gap:8px;align-items:center">
-              <svg width="46" height="24" viewBox="0 0 46 24" fill="none" aria-hidden><rect width="46" height="24" rx="4" fill="#0b1220" stroke="#111827"/></svg>
-              <svg width="46" height="24" viewBox="0 0 46 24" fill="none" aria-hidden><rect width="46" height="24" rx="4" fill="#0b1220" stroke="#111827"/></svg>
-            </div>
-          </div>
-        </div>
+        
       </div>
 
       <aside class="preview-card" aria-hidden>
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
           
         </div>
+      
+        <div class="video-block">
 
-        <div class="video" style="margin-top:10px;">
-          <video style="width:100%; border-radius:18px;" src="./asset/video.webm" autoplay loop muted playsinline controls></video>
-        </div>
+    <!-- ICON -->
+    <img src="./icon.png" class="play-unmute-icon" alt="Play Unmute Icon">
 
-      </aside>
+    <!-- VIDEO -->
+    <div class="video video-mobile-fix">
+        <video id="heroVid"
+            style="width:100%; border-radius:18px;" 
+            src="./asset/video.webm"
+            autoplay
+            muted
+            playsinline
+            loop
+            controls
+        ></video>
+    </div>
+
+</div>
+
+
+
+
+
+      </aside>    
+    
+
+  
+
 
     </section>
 
@@ -877,7 +1111,7 @@
     <span style='font-size:90px;color:#39ff88;font-weight:900;'>5</span> 
     <span style='color:#ffffff;'>FREE</span> 
     
-    <!-- 🟣 तुमने दिया हुआ नया AI icon -->
+    
     <img src="51.png" 
          style="width:100px;height:100px;vertical-align:middle;margin-left:6px;display:inline-block; ">
          
@@ -887,25 +1121,25 @@
  <section class="features-section">
 
   <div class="feature-box">
-    <img src="frist.png" class="feature-icon">
+    <img src="frist2new.PNG" class="feature-icon">
     <h3 class="feature-title">60 MIN</h3>
     <p class="feature-sub">SLOT AVAILABLE DAILY</p>
   </div>
 
   <div class="feature-box">
-    <img src="frist2.png" class="feature-icon">
+    <img src="frist4new.PNG" class="feature-icon">
     <h3 class="feature-title">REAL</h3>
     <p class="feature-sub">USER CASE LEARNING</p>
   </div>
 
   <div class="feature-box">
-    <img src="frist3.png" class="feature-icon">
+    <img src="fristnew.png" class="feature-icon feature-icon1">
     <h3 class="feature-title">LIVE</h3>
     <p class="feature-sub">POWER SESSION BY EXPERTS</p>
   </div>
 
   <div class="feature-box">
-    <img src="frist4.png" class="feature-icon">
+    <img src="frist3new.PNG" class="feature-icon">
     <h3 class="feature-title feature-title1 ">CERTIFICATES</h3>
     <p class="feature-sub feature-sub1">FOR COURSE COMPLETION</p>
   </div>
@@ -1004,10 +1238,10 @@
       <p class="muted">“Kaafi sahi laga! Best ₹500 I’ve invested. I missed the ₹5 discounted deal but I’m ready to join more classes at ₹500 too.”</p>
     </div>
 
-    <div class="card">
+    <div class="card card3">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
         <img src="./image/next3.png" style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
-        <h3 style="margin:0">Simran Kaur</h3>
+        <h3 style="margin:0">Rohit Kaur</h3>
       </div>
       <div style="color:#ffd95a;font-size:16px;margin-bottom:6px;">
         ⭐⭐⭐⭐⭐ <span style='color:#39ff88'>(4.8/5)</span>
@@ -1059,68 +1293,10 @@
   <div class="faq-card"><div class="faq-question">What if my payment fails or I face issues while registering? <span class="arrow">▶</span></div><div class="faq-answer">Click the WhatsApp Support button and our team will help resolve your issue.</div></div>
 </section>
 
-    <!-- <section class="container center" id="pricing">
-      <h2 style="color:#fff;margin-bottom:6px">Start building with AI</h2>
-      <p class="muted">Start free with V&V. Scale to powerful enterprise plans with guaranteed SLAs and dedicated support.</p>
-
-      <div style="display:flex;gap:14px;justify-content:center;margin-top:18px;flex-wrap:wrap">
-        <div class="card" style="min-width:220px;max-width:320px"><h3>Starter</h3><div style="font-weight:700;font-size:20px">Free</div><p class="muted">Basic usage, limited integrations, community support.</p><div style="margin-top:10px"><a class="btn" href="#" onclick="toggleOffer(); startCountdown(1800);">Get started</a></div></div>
-        <div class="card" style="min-width:220px;max-width:320px;border:1px solid rgba(255,255,255,0.06);box-shadow:0 10px 30px rgba(7,13,28,0.6)"><h3>Team</h3><div style="font-weight:700;font-size:20px">₹7,000 </div><p class="muted">Team seats, priority support, and more integrations.</p><div style="margin-top:10px"><a class="btn" href="#signup">Start trial</a></div></div>
-      </div>
-    </section> -->
-
-    <!-- <section class="container" id="demo" style="margin-top:28px">
-      <div style="display:grid;grid-template-columns:1fr 380px;gap:18px;align-items:start">
-        <div>
-          <h2 style="margin:0 0 8px;color:#fff">Request a personalized demo</h2>
-          <p class="muted">Tell us about your use case and we'll show a quick prototype tailored to your data.</p>
-
-          <form id="demo-form" onsubmit="handleSubmit(event)" style="margin-top:12px;display:grid;gap:10px;max-width:640px">
-            <input name="name" placeholder="Your name" required style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff">
-            <input name="email" type="email" placeholder="Email" required style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff">
-            <textarea name="message" rows="3" placeholder="Short description of your use case" style="padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff"></textarea>
-            <div style="display:flex;gap:10px">
-              <button class="btn" type="submit">Request demo</button>
-              <button type="button" class="btn ghost" onclick="openChat()">Chat with us</button>
-            </div>
-          </form>
-        </div>
-
-        
-
-      </div>
-    </section> -->
-
+    
   </main>
 
-  <!-- WhatsApp Floating Button -->
-  
 
-  <!-- Offer Slide Button -->
-  <div id="offer-btn" onclick="toggleOffer()">SAVE MY SPOT</div>
-
-  <!-- Offer Form Panel -->
-  <div id="offer-panel" aria-hidden="true">
-  
-  <div class="timer" id="countdown">30:00</div>
-
-  <div>
-    <span class="old-price">₹500</span> → <span class="new-price">₹5</span>
-  </div>
-
-  <input type="text" id="offer-name" placeholder="Your Name (A–Z only)" pattern="[A-Za-z ]+" required>
-  <input type="text" id="offer-mobile" placeholder="Mobile Number (10 digits)" maxlength="10" pattern="[0-9]{10}" required>
-  <input type="text" id="offer-city" placeholder="City" required>
-  <input type="email" id="offer-email" placeholder="Email ID" required>
-
-  <button id="claim-offer">SAVE MY SPOT</button>
-</div>
-
-
-
-
-<!-- from  stat here that the point  --> 
- 
 
 <div class="mobile-form-wrapper">
 
@@ -1154,9 +1330,11 @@
       </div>
     </div>
 
-    <button class="lastbutton" id="payBtn">
-      <img src="3.png" class="save-btn-mobile">
-    </button>
+    <!-- ❤️ CLICK -> PAYMENT GATEWAY -->
+    <button class="lastbutton" id="payBtnMobile">
+  <img src="3.png" class="save-btn-mobile">
+</button>
+
 
   </div>
 
@@ -1177,6 +1355,253 @@
 </div>
 
 
+  <!-- laptop prive ka from section statt heter  -->
+   <div class="mobile-form-card">
+
+  <!-- LIMITED OFFER -->
+  <img src="./form assets png transaprent/6.png" class="limited-offer-img">
+
+  <!-- Board -->
+  <div class="board-box board-ui">
+
+    <div class="input-row">
+  <span class="input-label">Name</span>
+  <input type="text" name="d_name" required>
+</div>
+
+<div class="input-row">
+  <span class="input-label">Number</span>
+  <input type="number" name="d_phone" required>
+</div>
+
+<div class="input-row">
+  <span class="input-label">E-mail</span>
+  <input type="email" name="d_email" required>
+</div>
+
+<div class="input-row">
+  <span class="input-label">City</span>
+  <input type="text" name="d_city" required>
+</div>
+
+
+  </div>
+
+  <!-- BUTTON -->
+  <button class="lastbutton" id="payBtnDesktop" style="margin-top: 10px;">
+  <img style="width: 200px; margin-top: -4px; margin-left: 20px;" src="./form assets png transaprent/3.png">
+</button>
+
+
+  <!-- TIMER -->
+  <div class="timer-box">
+    <span id="m1" style="position: relative; right: -3px;"  class="t-box">0</span>
+    <span id="m2" style="position: relative; right: 1px;" class="t-box">0</span>
+    <span style="margin-top: -8px; color: black;" class="t-colon">:</span>
+    <span id="s1" style="position: relative; right: 1px;" class="t-box">0</span>
+    <span id="s2" style="position: relative; right: 5px;" class="t-box">0</span>
+  </div>
+
+  <!-- PRICE -->
+  <div class="price-box">
+    <img src="./form assets png transaprent/4.png" class="price-cut">
+    <br>
+
+    <p class="price-final" 
+      style="
+      font-size: 100px; 
+      color: #ffffff; 
+      margin-left: 195px; 
+      margin-top: -75px;
+      text-shadow: 
+      0 0 10px #006010,
+      0 0 20px #30ff8a,
+      0 0 30px #006010,
+      0 0 40px #006010,
+      0 0 55px #006010,
+      0 0 70px #006010;">
+      5
+    </p>
+
+    <p class="rupees" style="font-size:55px; margin-top: -410px; color: #00ff66; margin-left: 275px; font-weight: 50;">₹</p>
+  </div>
+
+</div>
+
+
+<!-- end here  --> 
+ <style>
+
+@font-face {
+  font-family: 'Six Hands Chalk';
+  src: url('./fonts/SixHandsChalk.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ❌ Mobile par sab hide */
+@media only screen and (max-width: 767px) {
+  .mobile-form-card {
+    display: none !important;
+  }
+}
+
+/* ✅ YE SARA CSS sirf desktop/tablet par chalega */
+@media only screen and (min-width: 768px) {
+
+.mobile-form-card{
+  width: 490px;
+  background:#0a2c20;
+  border-radius: 18px;
+  padding: 12px;
+  left: 940px;
+  position: relative;
+  box-shadow:0 0 25px rgba(0,0,0,0.6);
+  height: 310px;
+  margin-top: 363px;
+  max-width: 500px;
+  
+  
+  
+}
+
+.limited-offer-img{
+  width:140px;
+  position:absolute;
+  top:1px;
+  right:7px;
+  z-index:10;
+}
+
+.board-ui{
+  background:url('form assets png transaprent/5.png');
+  background-size:cover;
+  width:325px;
+  height:233px;
+  border-radius:12px;
+  padding:20px 12px;
+  box-sizing:border-box;
+  position:relative;
+}
+
+.board-input{
+  width: 53%;
+  background:white;
+  height:28px;
+  border-radius:6px;
+  margin-bottom:8px;
+  padding-left:10px;
+  border:none;
+  outline:none;
+  font-size:13px;
+}
+
+.timer-box{
+  margin-top:12px;
+  display:flex;
+  justify-content:center;
+  gap:5px;
+  position: relative;
+  right: -350px;
+  background:#00ff66;
+  width: 100px;
+  border-radius: 10px;
+  top: -220px;
+}
+
+.t-box{
+  border-radius:6px;
+  font-weight:700;
+  font-size:30px;
+  color:black;
+  word-spacing: -9px;
+}
+
+.t-colon{
+  font-size:35px;
+  font-weight:bold;
+}
+
+.price-box{
+  text-align:center;
+  margin-top:10px;
+}
+
+.price-cut{
+  width:80px;
+  margin-top:5px;
+  position: relative;
+  top: -220px;
+  right: -355px;
+}
+
+.price-final{
+  width:90px;
+  margin-top:-15px;
+  position: relative;
+  top: -200px;
+  right: -170px;
+  background: none !important;
+  background-color: transparent !important;
+}
+
+.save-btn{
+  width:100%;
+  margin-top:10px;
+}
+
+.input-row{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.input-row input{
+  width: 190px;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+}
+
+.input-label{
+  color: white;
+  font-size: 28px;
+  margin-left: 10px;
+  font-weight: 600;
+  width: 80px;
+  font-family: "Allura", cursive;
+}
+
+.lastbutton{ 
+  width: 260px;
+  height: 48px; 
+  position: relative;
+  top: -2px;
+  left: 34px;
+  border-radius: 10px;
+  background-color: #febe29;
+}
+
+.mobile-form-card {
+  position: fixed;
+  top: 25%;
+  right: -730px;
+  transform: translateY(-50%);
+  z-index: 99999;
+}
+
+} /* Desktop-only CSS END */
+
+
+
+
+
+</style>
+
+
+
 
 
 
@@ -1184,7 +1609,7 @@
     <div class="container">
       <div style="display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap">
         <div style="display:flex;gap:12px;align-items:center">
-          <div class="logo" style="width:52px;height:52px">V&V</div>
+          <!-- <div class="logo" style="width:52px;height:52px">V&V</div> -->
           <div>
             
            
@@ -1207,6 +1632,7 @@
   gap: 18px;
   padding: 20px 0;
   margin-top: 40px;
+ 
 ">
   <p style="margin: 0; font-size: 22px; font-weight: 700; color: #ffffff; margin-left: 14px;">
     Still Unsure? Talk to an expert now.
@@ -1249,67 +1675,7 @@
 
 
 
-  <script>
-    // Offer panel toggle
-    const offerBtn = document.getElementById('offer-btn');
-    const offerPanel = document.getElementById('offer-panel');
-    function toggleOffer(){
-      offerPanel.classList.toggle('open');
-      offerPanel.setAttribute('aria-hidden', !offerPanel.classList.contains('open'));
-    }
-
-    // Countdown timer (starts at 30:00 when opened)
-    let countdownInterval = null;
-    function startCountdown(seconds=1800){
-      clearInterval(countdownInterval);
-      const display = document.getElementById('countdown');
-      let s = seconds;
-      display.textContent = formatTime(s);
-      countdownInterval = setInterval(()=>{
-        s--;
-        if(s<0){ clearInterval(countdownInterval); display.textContent='00:00'; return; }
-        display.textContent = formatTime(s);
-      },1000);
-    }
-    function formatTime(s){
-      const m = Math.floor(s/60).toString().padStart(2,'0');
-      const sec = (s%60).toString().padStart(2,'0');
-      return `${m}:${sec}`;
-    }
-
-    offerBtn.addEventListener('click', ()=> startCountdown(1800));
-
-    // Claim offer (simple client-side validation)
-    document.getElementById('claim-offer').addEventListener('click', ()=>{
-      const name = document.getElementById('offer-name');
-      const mobile = document.getElementById('offer-mobile');
-      const city = document.getElementById('offer-city');
-      const email = document.getElementById('offer-email');
-      if(!name.value.match(/^[A-Za-z ]+$/)){ alert('Name: only letters and spaces allowed'); name.focus(); return; }
-      if(!mobile.value.match(/^\d{10}$/)){ alert('Enter a valid 10 digit mobile number'); mobile.focus(); return; }
-      if(!city.value.trim()){ alert('Please enter city'); city.focus(); return; }
-      if(!email.value || !email.value.includes('@')){ alert('Enter a valid email'); email.focus(); return; }
-
-      // TODO: replace with real submission (fetch / API)
-      
-      offerPanel.classList.remove('open');
-    });
-
-    // Demo form submit handler (placeholder)
-   
-
-    function openChat(){ window.open('https://wa.me/91XXXXXXXXXX','_blank'); }
-
-    // FAQ accordion
-    document.querySelectorAll('.faq-card').forEach(card=>{
-      const q = card.querySelector('.faq-question');
-      q.addEventListener('click', ()=>{ card.classList.toggle('open'); });
-    });
-
-    // Accessibility: close offer panel with ESC
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ offerPanel.classList.remove('open'); } });
-
-  </script>
+  
   
 
 <script>
@@ -1345,50 +1711,182 @@ document.querySelector('.btn[title="Get demo"]').addEventListener('click', () =>
 </script>
 
 
+<!-- Cashfree SDK -->
+
+
 <script>
-  document.getElementById("payBtn").addEventListener("click", async function(e){
-    e.preventDefault();
 
-    const name  = document.querySelector("input[name='name']").value;
-    const email = document.querySelector("input[name='email']").value;
-    const phone = document.querySelector("input[name='phone']").value;
+async function saveLead(name, phone, email, city) {
+  try {
+    const res = await fetch("https://api2.vandv.ai/api/leads", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, phone, email, city })
+    });
 
-    if (!name.trim()) return alert("Please enter Name");
-    if (!phone.match(/^\d{10}$/)) return alert("Enter a valid 10-digit number");
-    if (!email.includes("@")) return alert("Enter a valid Email");
+    const data = await res.json();
+    console.log("Lead Save Response:", data);
+
+    return data.status === "success";
+
+  } catch (err) {
+    console.error("Lead Save Error:", err);
+    return false;
+  }
+}
+
+async function processPayment(isDesktop = false) {
+
+    let name, email, phone, city;
+
+    if (isDesktop) {
+        name  = document.querySelector("input[name='d_name']").value.trim();
+        phone = document.querySelector("input[name='d_phone']").value.trim();
+        email = document.querySelector("input[name='d_email']").value.trim();
+        city  = document.querySelector("input[name='d_city']").value.trim();
+    } else {
+        name  = document.querySelector("input[name='name']").value.trim();
+        phone = document.querySelector("input[name='phone']").value.trim();
+        email = document.querySelector("input[name='email']").value.trim();
+        city  = document.querySelector("input[name='city']").value.trim();
+    }
+
+
+    if (!name || !phone || !email || !city) return alert("Fill all fields properly.");
+
+    const ok = await saveLead(name, phone, email, city);
+
+    if (!ok) {
+        alert("Server Error! Data not saved.");
+        return;
+    }
 
     const payload = {
       amount: 5,
       customerName: name,
       customerEmail: email,
-      customerPhone: phone
+      customerPhone: phone,
+      city: city
     };
 
-    try {
-      const response = await fetch("https://api.vandvagro.com/api/payment/create-order", {
+    fetch("https://api.vandv.ai/api/payment/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if (!data.success) 
+            return alert("Payment Error");
+
+        const cashfree = Cashfree({ mode: "production" });
+        cashfree.checkout({
+          paymentSessionId: data.payment_session_id,
+          redirectTarget: "_self"
+        });
+    })
+    .catch(err => alert("Payment Failed: " + err.message));
+}
+
+
+document.getElementById("payBtnMobile")?.addEventListener("click", function(e){
+    e.preventDefault();
+    processPayment(false);
+});
+
+document.getElementById("payBtnDesktop")?.addEventListener("click", function(e){
+    e.preventDefault();
+    processPayment(true);
+});
+
+</script>
+
+
+
+
+
+
+
+
+<script>
+  function startMobileTimer() {
+    let timeLeft = 30 * 60; // 30 min
+
+    // OLD DISPLAY (आपका existing code)
+    const display = document.querySelector(".form-right #countdown");
+
+    // NEW DIGIT BOXES (m1 m2 s1 s2)
+    const m1 = document.getElementById("m1");
+    const m2 = document.getElementById("m2");
+    const s1 = document.getElementById("s1");
+    const s2 = document.getElementById("s2");
+
+    setInterval(() => {
+      let minutes = String(Math.floor(timeLeft / 60)).padStart(2, "0");
+      let seconds = String(timeLeft % 60).padStart(2, "0");
+
+      // ✅ OLD DISPLAY UPDATE (Same as before)
+      if (display) {
+        display.textContent = `${minutes} : ${seconds}`;
+      }
+
+      // ✅ NEW DIGIT-BOXES UPDATE
+      if (m1 && m2 && s1 && s2) {
+        m1.textContent = minutes[0];
+        m2.textContent = minutes[1];
+        s1.textContent = seconds[0];
+        s2.textContent = seconds[1];
+      }
+
+      if (timeLeft > 0) {
+        timeLeft--;
+      }
+    }, 1000);
+  }
+
+  // Timer auto start on page load
+  window.addEventListener("load", startMobileTimer);
+</script>
+
+
+<script>
+  const faqCards = document.querySelectorAll('.faq-card');
+
+  faqCards.forEach(card => {
+    const question = card.querySelector('.faq-question');
+
+    question.addEventListener('click', () => {
+
+      // पहले सभी खुले हुए cards बंद कर दो (सिवाय जिस पर क्लिक हुआ है)
+      faqCards.forEach(otherCard => {
+        if (otherCard !== card) {
+          otherCard.classList.remove("open");
+        }
       });
 
-      const data = await response.json();
-      if (!data.success) return alert("Payment Error: " + data.error);
-
-      const sessionId = data.payment_session_id;
-      const cashfree = Cashfree({ mode: "production" });
-
-      cashfree.checkout({
-        paymentSessionId: sessionId,
-        redirectTarget: "_self"
-      });
-
-    } catch (err) {
-      alert("Payment Failed: " + err.message);
-    }
+      // जिस card पर क्लिक हुआ है उसे toggle करो
+      card.classList.toggle("open");
+    });
   });
 </script>
 
 
+<script>
+  const vid = document.getElementById("heroVid");
+
+  // Desktop/Laptop: allow autoplay with audio
+  if (!/Android|iPhone|iPad/i.test(navigator.userAgent)) {
+    vid.muted = false;
+    vid.play().catch(()=>{});
+  }
+
+  // Mobile: user tap → unmute
+  vid.addEventListener("click", () => {
+    vid.muted = false;
+    vid.play();
+  });
+</script>
 
 
 
